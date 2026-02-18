@@ -16,8 +16,57 @@
             <button type="button" id="unitCBtn" class="chip">°C</button>
             <button type="button" id="unitFBtn" class="chip">°F</button>
           </div>
+
+          <div class="recent">
+            <label class="sr-only" for="recentSelect">Recent Searches</label>
+            <select id="recentSelect" class="select">
+              <option value="">Recent searches</option>
+            </select>
+          </div>
         </div>
+
+        <form class="search-box" id="searchForm" autocomplete="off">
+          <label class="sr-only" for="cityInput">City</label>
+          <input
+            type="text"
+            id="cityInput"
+            name="city"
+            placeholder="Enter a city"
+            inputmode="text"
+            spellcheck="false"
+            aria-describedby="helperText"
+            required
+          />
+          <button type="submit" id="searchBtn">Search</button>
+        </form>
+        <p id="helperText">Tip: Press enter to search.</p>
       </div>
     </header>
+
+    <main class="container" id="main">
+      <section
+        id="statusSection"
+        class="card hidden"
+        aria-live="polite"
+      ></section>
+
+      <section
+        id="weatherSection"
+        class="card hidden"
+        aria-labelledby="weatherTitle"
+      >
+        <h2 id="weatherTitle">Weather</h2>
+        <div id="weatherContent"></div>
+      </section>
+
+      <section
+        id="placesSection"
+        class="card hidden"
+        aria-labelledby="placesTitle"
+      >
+        <h2 id="placesTitle">Attractions</h2>
+        <div id="placesGrid" class="grid"></div>
+      </section>
+    </main>
   </body>
 </html>
